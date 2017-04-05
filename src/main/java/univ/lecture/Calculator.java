@@ -37,19 +37,18 @@ public class Calculator {
 
 		private double evaluate(double x, double y, String op) {
 			// 연산자별 계산 방식 구분
-			double z = 0;
+			double result = 0;
 
 			if (op.equals("+"))
-				z = x + y;
+				result = x + y;
 			else if (op.equals("-"))
-				z = x - y;
+				result = x - y;
 			else if (op.equals("*"))
-				z = x * y;
+				result = x * y;
 			else
-				z = x / y;
-			return z;
+				result = x / y;
+			return result;
 		}
-
 	}
 
 	private class Transform {
