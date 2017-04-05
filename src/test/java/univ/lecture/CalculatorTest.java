@@ -25,6 +25,12 @@ public class CalculatorTest {
         Calculator calc = new Calculator();
         int output = calc.calculate("6/3");
         assertThat(output, is(2));
+    } 
+    public void testCalculatorSub () {
+        Calculator calc = new Calculator();
+        int output = calc.calculate("6-3");
+        assertThat(output, is(3));
     }
+    
     
 }
