@@ -58,8 +58,19 @@ public class Calculator {
 		}
 
 		private int precedence(String token) {
-
+			
+			if (token.equals("*") || token.equals("/"))
+				return 4;
+			else if (token.equals("+") || token.equals("-"))
+				return 2;
+			else if (token.equals("("))
+				return 9;
+			else if (token.equals(")")) {
+				return 0;
+			} else
+				return 0;
 		}
+		
 	}
 
 }
