@@ -21,4 +21,10 @@ public class CalculatorTest {
         int output = calc.calculate("2*3");
         assertThat(output, is(6));
     }
+    public void testCalculatorDiv () {
+        Calculator calc = new Calculator();
+        int output = calc.calculate("6/3");
+        assertThat(output, is(2));
+    }
+    
 }
