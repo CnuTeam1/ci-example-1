@@ -31,6 +31,11 @@ public class CalculatorTest {
         int output = calc.calculate("6-3");
         assertThat(output, is(3));
     }
+    public void testCalculatorComplex () {
+        Calculator calc = new Calculator();
+        int output = calc.calculate("(12*3)+2*(3-7)*3");
+        assertThat(output, is(12));
+    }
     
     
 }
