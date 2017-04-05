@@ -1,5 +1,7 @@
 package univ.lecture;
-
+/*
+ * 201302493 최기현
+ */
 
 /**
  * Created by tchi on 2017. 3. 19..
