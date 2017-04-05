@@ -15,4 +15,27 @@ public class CalculatorTest {
         int output = calc.calculate("1+1");
         assertThat(output, is(2));
     }
+    
+    public void testCalculatorMult () {
+        Calculator calc = new Calculator();
+        int output = calc.calculate("2*3");
+        assertThat(output, is(6));
+    }
+    public void testCalculatorDiv () {
+        Calculator calc = new Calculator();
+        int output = calc.calculate("6/3");
+        assertThat(output, is(2));
+    } 
+    public void testCalculatorSub () {
+        Calculator calc = new Calculator();
+        int output = calc.calculate("6-3");
+        assertThat(output, is(3));
+    }
+    public void testCalculatorComplex () {
+        Calculator calc = new Calculator();
+        int output = calc.calculate("(12*3)+2*(3-7)*3");
+        assertThat(output, is(12));
+    }
+    
+    
 }
