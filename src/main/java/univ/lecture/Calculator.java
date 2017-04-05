@@ -16,8 +16,10 @@ import java.util.StringTokenizer;
  */
 public class Calculator {
 	public int calculate(String exp) {
-
-		return 2;
+		// 중위식을 후위식으로 변환하는 클래스를 생성해서 얻은 스트링 배열을 가지는 반환값을 매개변수로 가지는 RPN객체를 생성
+		String result = new RPN(new Transform().infixToPostfix(expressionTokenizer(exp))).returnResult();
+				
+		return (int)Double.parseDouble(result);
 	}
 
 	private String[] expressionTokenizer(String exp) {
