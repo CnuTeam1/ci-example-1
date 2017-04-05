@@ -25,6 +25,11 @@ public class Calculator {
 		int count=0;
 		StringTokenizer token = new StringTokenizer(exp, "*/+-()", true);
 		stringExpToStringArrayExp = new String[token.countTokens()];
+		while(token.hasMoreTokens()){
+			String nextToken=token.nextToken();
+			stringExpToStringArrayExp[count]=nextToken;
+			count++;
+		}
 	}
 
 
