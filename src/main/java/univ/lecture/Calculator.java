@@ -1,4 +1,7 @@
 package univ.lecture;
+
+import java.util.StringTokenizer;
+
 /*
  * 201302392 나재성
  * 201302391 김환철
@@ -18,7 +21,10 @@ public class Calculator {
 	}
 
 	private String[] expressionTokenizer(String exp) {
-
+		String[] stringExpToStringArrayExp;
+		int count=0;
+		StringTokenizer token = new StringTokenizer(exp, "*/+-()", true);
+		stringExpToStringArrayExp = new String[token.countTokens()];
 	}
 
 
