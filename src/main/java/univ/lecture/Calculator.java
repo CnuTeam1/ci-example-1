@@ -21,35 +21,46 @@ public class Calculator {
 
 	}
 
-
-
 	private class RPN {
 
 		private RPN(String[] args) {
 
 		}
-		private String returnResult(){
-		
+
+		private String returnResult() {
+
 		}
+
 		private boolean isAnOperator(String s) {
 
 		}
 
 		private double evaluate(double x, double y, String op) {
+			double z = 0;
 
+			if (op.equals("+"))
+				z = x + y;
+			else if (op.equals("-"))
+				z = x - y;
+			else if (op.equals("*"))
+				z = x * y;
+			else
+				z = x / y;
+
+			// System.out.println(x + " " + op + " " + y + " = " + z);
+			return z;
 		}
 
 	}
 
 	private class Transform {
 
-
 		private String[] infixToPostfix(String[] args) {
-		
+
 		}
 
 		private int precedence(String token) {
-		
+
 		}
 	}
 
