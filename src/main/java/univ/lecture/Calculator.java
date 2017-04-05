@@ -7,6 +7,8 @@ package univ.lecture;
  * 201302487 조민성
  */
 
+import java.util.Stack;
+
 /**
  * Created by tchi on 2017. 3. 19..
  * 
