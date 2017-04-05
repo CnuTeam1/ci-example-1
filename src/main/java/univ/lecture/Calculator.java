@@ -1,5 +1,8 @@
 package univ.lecture;
 
+import java.util.StringTokenizer;
+import java.util.Stack;
+
 /* 
  * 학번&이름
  * 201302392 나재성
@@ -7,10 +10,6 @@ package univ.lecture;
  * 201302493 최기현
  * 201302487 조민성
  */
-import java.util.Stack;
-
-import java.util.Stack;
-
 /**
  * Created by tchi on 2017. 3. 19..
  * 
@@ -18,14 +17,26 @@ import java.util.Stack;
  */
 public class Calculator {
 	public int calculate(String exp) {
-
-		return 2;
+		// 중위식을 후위식으로 변환하는 클래스를 생성해서 얻은 스트링 배열을 가지는 반환값을 매개변수로 가지는 RPN객체를 생성
+		String result = new RPN(new Transform().infixToPostfix(expressionTokenizer(exp))).returnResult();
+				
+		return (int)Double.parseDouble(result);
 	}
 
 	private String[] expressionTokenizer(String exp) {
-
+		String[] stringExpToStringArrayExp;
+		int count=0;
+		StringTokenizer token = new StringTokenizer(exp, "*/+-()", true);
+		stringExpToStringArrayExp = new String[token.countTokens()];
+	
+    while(token.hasMoreTokens()){
+			String nextToken=token.nextToken();
+			stringExpToStringArrayExp[count]=nextToken;
+			count++;
+		}
+		return stringExpToStringArrayExp;
 	}
-
+  
 	private class RPN {
 		// args에는 입력한 argument가 저장되어 있음.
 		Stack<String> stack;
@@ -141,9 +152,8 @@ public class Calculator {
 					count++;
 				}
 			}
-			
-
 			return a;
+    }
 
 		private int precedence(String token) {
 			// 연산자의 우선 순위를 반환하는 함수 작성
