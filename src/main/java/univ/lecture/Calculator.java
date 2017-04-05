@@ -58,6 +58,8 @@ public class Calculator {
 		}
 
 		private int precedence(String token) {
+			// 연산자의 우선 순위를 반환하는 함수 작성
+			// 연산자 우선 순위 *,/ > +,- > (,)
 			
 			if (token.equals("*") || token.equals("/"))
 				return 4;
@@ -68,7 +70,7 @@ public class Calculator {
 			else if (token.equals(")")) {
 				return 0;
 			} else
-				return 0;
+				return 0; // 올바른 값이 안들어 왔을 경우 예외처리
 		}
 		
 	}
