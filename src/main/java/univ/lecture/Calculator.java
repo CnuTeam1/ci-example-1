@@ -30,8 +30,11 @@ public class Calculator {
 			stringExpToStringArrayExp[count]=nextToken;
 			count++;
 		}
-	}
+		
 
+
+		return stringExpToStringArrayExp;
+	}
 
 
 	private class RPN {
