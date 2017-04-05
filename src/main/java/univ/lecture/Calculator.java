@@ -24,33 +24,34 @@ public class Calculator {
 
 	}
 
-
-
 	private class RPN {
 		// args에는 입력한 argument가 저장되어 있음.
-				Stack<String> stack;
-				private RPN(String[] args) {
-					stack = new Stack<String>();
-					// ArrayStack stack = new ArrayStack(args.length);
+		Stack<String> stack;
 
-					for (int i = 0; i < args.length; i++) {
-						String input = args[i];
+		private RPN(String[] args) {
+			stack = new Stack<String>();
+			// ArrayStack stack = new ArrayStack(args.length);
 
-						// System.out.print(input + " ");
+			for (int i = 0; i < args.length; i++) {
+				String input = args[i];
 
-						if (isAnOperator(input)) {
-							double y = Double.parseDouble((String) stack.pop());
-							double x = Double.parseDouble((String) stack.pop());
-							double z = evaluate(x, y, input);
-							stack.push(""+z);
-						} else
-							stack.push(input);
-					}
-					
-				}
-		private String returnResult(){
-		
+				// System.out.print(input + " ");
+
+				if (isAnOperator(input)) {
+					double y = Double.parseDouble((String) stack.pop());
+					double x = Double.parseDouble((String) stack.pop());
+					double z = evaluate(x, y, input);
+					stack.push("" + z);
+				} else
+					stack.push(input);
+			}
+
 		}
+
+		private String returnResult() {
+			return stack.pop();
+		}
+
 		private boolean isAnOperator(String s) {
 
 		}
@@ -63,13 +64,12 @@ public class Calculator {
 
 	private class Transform {
 
-
 		private String[] infixToPostfix(String[] args) {
-		
+
 		}
 
 		private int precedence(String token) {
-		
+
 		}
 	}
 
