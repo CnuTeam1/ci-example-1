@@ -36,6 +36,7 @@ public class Calculator {
 		}
 
 		private double evaluate(double x, double y, String op) {
+			// 연산자별 계산 방식 구분
 			double z = 0;
 
 			if (op.equals("+"))
@@ -46,8 +47,6 @@ public class Calculator {
 				z = x * y;
 			else
 				z = x / y;
-
-			// System.out.println(x + " " + op + " " + y + " = " + z);
 			return z;
 		}
 
