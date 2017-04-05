@@ -64,6 +64,7 @@ public class Calculator {
 			size = args.length - size;
 			String[] a = new String[size];
 			// ***********************************************************
+			
 			// 후위식으로 변환하기 위한 코드
 			for (int i = 0; i < args.length; i++) {
 				if (args[i].length() == 1 && "*/+-()".indexOf(args[i]) >= 0) {
@@ -81,11 +82,7 @@ public class Calculator {
 							// 우선순위와 같거나 작을 경우 반복문 수행
 							if (!(stack.peek().equals("("))) {
 								// 스택의 top 값이 "(" 가 아닐 경우만 아래의 코드를 수행
-								a[count] = (String) stack.pop();// 받아온
-																// 연산자(args[i])의
-																// 우선순위가 스택안의
-																// 연산자의 우선순위와
-																// 같거나 작을 경우 pop
+								a[count] = (String) stack.pop();// 받아온 연산자(args[i])의 우선순위가 스택안의 연산자의 우선순위와 같거나 작을 경우 pop
 								count++;
 							} else {
 								stack.pop();// 스택의 top 값이"("일 경우 pop
@@ -94,8 +91,7 @@ public class Calculator {
 						}
 						if (precedence(args[i]) != 0) {//
 							stack.push(args[i]);
-							// pop을 다하고 난 뒤, args[i]의 값이 ")"인 경우를 빼고 받아온 연산자를
-							// 스택에 push
+							// pop을 다하고 난 뒤, args[i]의 값이 ")"인 경우를 빼고 받아온 연산자를 스택에 push
 						}
 					}
 
